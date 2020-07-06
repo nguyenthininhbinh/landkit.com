@@ -8,11 +8,12 @@
     display: none;
   }
 
-  .button  {
+ 
+  .button {
     display: none;
   }
-   .button i {
-    display: block;
+   .i img{
+    display: block !important;
   }
   .drop {
     font-size: 1.1775rem !important;
