@@ -2,28 +2,32 @@
 <html lang="vi">
 <head>
   <title>Landkit</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/reponsive.css">
-  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/toggle-menu .css">
+  <link rel="stylesheet" type="text/css" href="css/slideshow.css">
+  <script language="javascript" src="js/js.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <link
-  rel="stylesheet"
-  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-  />
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+  <link rel="stylesheet"href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+ 
+  
 </head>
-<body>
+<body id="over" class="over">
 	<div id="header">
       <div class="header__inner">
         <div id="logo"> <a href="#"><img src="img/logo.svg"></a></div>
           <div id="menu">
             <ul class="dropdown">
               <li> <a href="#">Landings</a>  
-                  <ul class="sub-menu" style="width: 600">
+                  <ul class="sub-menu" style="width: 600px;">
                     <div class="image">
                       <div class="img" ><div>
-                          <h4 style="padding-left: 30">Want to see an overview? </h4>
+                          <h4 style="padding-left: 30px;">Want to see an overview? </h4>
                           <p >See all the pages at once.</p>
                           <div class="button_img">
                             <a  href="#">View all pages</a>
@@ -144,31 +148,30 @@
       </ul>
     </li>
       <li> <a href="#">Documentation</a>
-        <ul class="sub-menu" style="width:350">
+        <ul class="sub-menu" style="width:350px;">
           <div class="list_group">
             <li class="list_group_item" style="padding-left: inherit;">
               <img src="img/2_1.svg" >
               <div>
-                <a href="#" style="color: #335eea" > DOCUMENTATION</a>
+                <a href="#" style="color: #335eea;" > DOCUMENTATION</a>
                 <a href="#">Customizing and building</a>
             </div>
         </li>
         <li class="list_group_item"style="padding-left: inherit;">
           <img src="img/3_1.svg">
           <div>
-            <a href="#" style="color: #335eea" >COMPONENTS</a>
+            <a href="#" style="color: #335eea;" >COMPONENTS</a>
             <a href="#">Full list of components</a>
         </div>
       </li>
       <li class="list_group_item" style="padding-left: inherit; "> 
           <img src="img/4_1.svg">
           <div>
-            <a href="#" style="color: #335eea">CHANGELOG</a>
+            <a href="#" style="color: #335eea;">CHANGELOG</a>
             <a href="#">Keep track of changes </a>
 
           </div>
-          <a href="#"><span class="bt" style="font-size: 13">1.2.0</span></a>   
-         
+          <a href="#"><span class="bt" style="font-size: 13px;">1.2.0</span></a>   
            
       </li>
     </ul>
@@ -176,18 +179,208 @@
 </ul>
 
     </div>
-       <li class="btn-buy">
+       <li class="btn-buy" onclick="showToggleMenu()">
         <a href="#">Buy now</a>
-            <i class="fal fa-bars"style="color: #161c2d; font-size: 26px; padding: 4px 12px;"
+            <i class="fal fa-bars" style="color: #161c2d; font-size: 26px; padding: 4px 12px;"
             ></i>
       </li>
-    
+
     </div>
-
+   
+    </div>
+    <div class="wrapper-toggle-menu">
+      <div class="toggle-menu" id="toggle-menu">
+        <ul class="navbar">
+          <i class="fal fa-times" onclick="hiddenToggleMenu()"></i>
+          <li style="border-bottom: 1px solid #f1f4f8;">
+            <a href="#">Landings</a>
+            <div class="item item-1">
+              <div class="left">
+                <ul style="margin-bottom: 1.5rem;">
+                  <li class="name">Services</li>
+                  <li><a href="#">Coworking</a></li>
+                  <li><a href="#">Rental</a></li>
+                  <li><a href="#">Job Listing</a></li>
+                </ul>
+                <ul>
+                  <li class="name">Apps</li>
+                  <li><a href="#">Desktop</a></li>
+                  <li><a href="#">Mobile</a></li>
+                </ul>
+              </div>
+              <div class="right">
+                <ul>
+                  <li class="name">Web</li>
+                  <li><a href="#">Basic</a></li>
+                  <li>
+                    <a href="#">Startup <span>(New)</span></a>
+                  </li>
+                  <li><a href="#">Enterprise</a></li>
+                  <li><a href="#">Service</a></li>
+                  <li><a href="#">Cloud Hosting</a></li>
+                  <li><a href="#">Agency</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+    
+          <li style="border-bottom: 1px solid #f1f4f8;">
+            <a href="#">Pages</a>
+            <div class="item item-2">
+              <div class="left">
+                <ul style="margin-bottom: 1.5rem;">
+                  <li class="name">Career</li>
+                  <li><a href="#">Listing</a></li>
+                  <li><a href="#">Opening</a></li>
+                </ul>
+                <ul style="margin-bottom: 1.5rem;">
+                  <li class="name">Company</li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Terms</a></li>
+                </ul>
+                <ul style="margin-bottom: 1.5rem;">
+                  <li class="name">Help center</li>
+                  <li><a href="#">Overview</a></li>
+                  <li><a href="#">Article</a></li>
+                </ul>
+                <ul>
+                  <li class="name">Contact</li>
+                  <li><a href="#">Basic</a></li>
+                  <li><a href="#">Cover</a></li>
+                </ul>
+              </div>
+              <div class="right">
+                <ul style="margin-bottom: 1.5rem;">
+                  <li class="name">Blog</li>
+                  <li><a href="#">Rich View</a></li>
+                  <li><a href="#">Article</a></li>
+                  <li><a href="#">Showcase</a></li>
+                  <li><a href="#">Search</a></li>
+                </ul>
+                <ul>
+                  <li class="name">Portfolio (new)</li>
+                  <li><a href="#">Masonry</a></li>
+                  <li><a href="#">Grid Rows</a></li>
+                  <li><a href="#">Parallax</a></li>
+                  <li><a href="#">Case Study</a></li>
+                  <li><a href="#">Sidebar</a></li>
+                  <li><a href="#">Sidebar: Fluid</a></li>
+                  <li><a href="#">Basic Grid</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+    
+          <li style="border-bottom: 1px solid #f1f4f8;">
+            <a href="#">Account</a>
+            <div class="item item-3">
+              <div
+                class="content toggle-menu-dropdown menu-dropdown"
+                id="menu-dropdown" 
+              >
+                <a class="link-text">Settings <span>(New)</span></a>
+                <i class="fal fa-angle-down show"  onclick="dropdown(1)"></i>
+                <ul class="list-text toggle-list-text" id='list_1'>
+                  <li><a href="#">General</a></li>
+                  <li><a href="#">Security</a></li>
+                  <li><a href="#">Notifications</a></li>
+                  <li><a href="#">Plans & Payment</a></li>
+                  <li><a href="#">Users</a></li>
+                </ul>
+              </div>
+              <div class="content toggle-menu-dropdown menu-dropdown">
+                <a class="link-text">Sign In</a>
+                <i class="fal fa-angle-down show" onclick="dropdown(2)"></i>
+                <ul class="list-text toggle-list-text" id='list_2'>
+                  <li><a href="#">Side Cover</a></li>
+                  <li><a href="#">Illustration</a></li>
+                  <li><a href="#">Basic</a></li>
+                  <li><a href="#">Modal Horizontal</a></li>
+                  <li><a href="#">Modal Vertical</a></li>
+                </ul>
+              </div>
+              <div class="content toggle-menu-dropdown menu-dropdown">
+                <a class="link-text">Sign Up</a>
+                <i class="fal fa-angle-down show"  onclick="dropdown(3)"></i>
+                <ul class="list-text toggle-list-text" id='list_3'>
+                  <li><a href="#">Side Cover</a></li>
+                  <li><a href="#">Illustration</a></li>
+                  <li><a href="#">Basic</a></li>
+                  <li><a href="#">Modal Horizontal</a></li>
+                  <li><a href="#">Modal Vertical</a></li>
+                </ul>
+              </div>
+              <div class="content toggle-menu-dropdown menu-dropdown">
+                <a class="link-text">Password Reset</a>
+                <i class="fal fa-angle-down show"  onclick="dropdown(4)"></i>
+                <ul class="list-text toggle-list-text" id='list_4'>
+                  <li><a href="#">Side Cover</a></li>
+                  <li><a href="#">Illustration</a></li>
+                  <li><a href="#">Basic</a></li>
+                </ul>
+              </div>
+              <div class="content toggle-menu-dropdown menu-dropdown">
+                <a class="link-text">Error</a>
+                <i class="fal fa-angle-down show"  onclick="dropdown(5)"></i>
+                <ul class="list-text toggle-list-text" id='list_5'>
+                  <li><a href="#">Side Cover</a></li>
+                  <li><a href="#">Illustration</a></li>
+                  <li><a href="#">Basic</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+    
+          <li>
+            <a href="#">Documentation</a>
+            <div class="item item-4">
+              <div class="content" style="padding-top: 0;">
+                <div class="icon">
+                  <img src="img/2_1.svg">
+                </div>
+                <div class="cont">
+                  <h5 class="name">Documentation</h5>
+                  <p>Customizing and building</p>
+                </div>
+                <div class="ver"></div>
+              </div>
+              <div class="content">
+                <div class="icon">
+                  <img src="img/3_1.svg" >
+                </div>
+                <div class="cont">
+                  <h5 class="name">Components</h5>
+                  <p>Full list of components</p>
+                </div>
+                <div class="ver"></div>
+              </div>
+              <div
+                class="content"
+                style="padding-bottom: 0; border-bottom: none;"
+              >
+                <div class="icon">
+                  <img src="img/4_1.svg">
+                </div>
+                <div class="cont">
+                  <h5 class="name">Changelog</h5>
+                  <p>Keep track of changes</p>
+                </div>
+                <div class="ver">
+                  <span>1.2.0</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="btn-buy"  style="padding: 0;">
+            <a href="#">Buy now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
 </div>
 
-
-</div>
  
 <div id="main">
   <div class ="main__inner">
@@ -259,13 +452,13 @@
         <img src="img/alribble.svg">
     </div>
     <div class="banner_item">
-        <img  src="img/is.svg">
+        <img src="img/is.svg">
     </div>
     <div class="banner_item">
-        <img  src="img/net.svg">
+        <img src="img/net.svg">
     </div>
     <div class="banner_item">
-        <img   src="img/pin.svg" >
+        <img src="img/pin.svg" >
     </div>
   </div>
 </div>
@@ -275,139 +468,141 @@
     <div id="card_shadow_left">
       <div class="card_shadow_img">
         <img src="img/photo-2.jpg">
-
-    </div>
+      </div>
     <div class="card_shadow_form">
-        <form>
-          <div class="form_lable_group">
-            <input type="text" class="form_control" id="card_name" placeholder="Name">
+        <form name="myForm" method="POST" action="" onsubmit="return validateform">
+            <div class="form_lable_group">
+              <input type="text" class="form_control " id="card_name" placeholder="Name" style="border: none;border-bottom: 1px solid #f1f4f8;">
+            </div>
+            <div class="form_lable_group">
+              <input type="email" class="form_control " id="card_email" placeholder="Email" style="border: none;border-bottom: 1px solid #f1f4f8;">
+            </div>
+            <div class="form_lable_group">
+              <input type="password" class="form_control " id="card_papssword" placeholder="Password" style="border: none;border-bottom: 1px solid #f1f4f8;">
+            </div>
+            <div class="btn_form" style=" margin-top: 2rem;">
+              <button class="btn_form_submit" >
+                    Download a sample
+              </button>
+            </div>
+        </form>
+   </div>
 
+  </div>
+    <div id="card_shadow_right">
+        <h2>The most useful resource <span class="sp"> ever created for foun|</span>
+        </h2>
+        <p>Using Landkit to build your site means never worrying about designing another page or cross browser  compatibility. Our ever-growing library of components  and pre-designed layouts will make your life easier.</p>
+        <div class="card_shadow_right_item">
+          <div class="card_shadow_right_item1">
+            <p><img src="img/18.PNG">Lifetime updates</p>
+            <p><img src="img/18.PNG">Tons of assets</p>
+          </div>
+          <div class="card_shadow_right_item2">
+            <p><img src="img/18.PNG">Tech support</p>
+            <p><img src="img/18.PNG">Integration ready</p>
         </div>
-
-        <div class="form_lable_group">
-         <input type="email" class="form_control" id="card_email" placeholder="Email">
-
-     </div>
-
-     <div class="form_lable_group">
-         <input type="password" class="form_control " id="card_papssword" placeholder="Password">
-
-     </div>
-     <div class="btn_form" style=" margin-top: 2rem;">
-      
-      <button class="btn_form_submit">
-        Download a sample
-    </button>
+        </div>
     </div>
-
-</form>
-</div>
-
-</div>
-<div id="card_shadow_right">
-    <h2>The most useful resource <span class="sp"> ever created for foun|</span>
-    </h2>
-    <p>Using Landkit to build your site means never worrying about designing another page or cross browser  compatibility. Our ever-growing library of components  and pre-designed layouts will make your life easier.</p>
-    <div class="card_shadow_right_item">
-      <div class="card_shadow_right_item1">
-        <p><img src="img/18.PNG">Lifetime updates</p>
-        <p><img src="img/18.PNG">Tons of assets</p>
-    </div>
-    <div class="card_shadow_right_item2">
-        <p><img src="img/18.PNG">Tech support</p>
-        <p><img src="img/18.PNG">Integration ready</p>
-
-    </div>
-</div>
-</div>
-</div>	
+  </div>	
 </div>
 
 <div id="container">
   <div class ="container_inner">
     <div class="cotainer_body" style="line-height: 1.6">
       <div class="container_body1">
-        <h2>We have lots of experience<br><span> building Bootstrap themes.</span>
+        <h2>We have lots of experience<span> building Bootstrap themes.</span>
         </h2>
-        <p>We've built well over a dozen Bootstrap themes and sold <br> tens of thousands of copies.</p>
-
-    </div>
-    <div class="container_body2">
+        <p>We've built well over a dozen Bootstrap themes and sold  tens of thousands of copies.</p>
+      </div>
+      <div class="container_body2">
         <div>
           <div class="icon">
             <img src="img/16.PNG">
-        </div>
-        <div class="container_body2_item">
-
+          </div>
+          <div class="container_body2_item">
             <h6>Bootstrap users since the beginning</h6>
             <p>We've been developing with Bootstrap since it was publicly released in 2011.</p>
+          </div>
+        </div>
+        <div>
+          <div class="icon">
+            <img src="img/17.PNG" >
+        </div>
+          <div class="container_body2_item">
+              <h6>Deep understanding of Bootstrap</h6>
+              <p>We've watched Bootstrap grow up over the years and  understand it better than almost anyone.</p>
+          </div>
         </div>
     </div>
-    <div>
-      <div class="icon">
-        <img src="img/17.PNG" >
     </div>
-    <div class="container_body2_item">
-
-        <h6>Deep understanding of Bootstrap</h6>
-        <p>We've watched Bootstrap grow up over the years and  understand it better than almost anyone.</p>
-    </div>
+      <div class="container_img">
+        <img src="img/dashkit.jpg" class="screenshot img-fluid img-skewed-item">   
+      </div>
+  </div>
 </div>
-
-</div>
-
-</div>
-
-<div class="container_img">
-  <img src="img/dashkit.jpg" class="screenshot img-fluid img-skewed-item">   
-</div>
-
-</div>
-
-</div>
-
 <div class="container_center">
    <div class="container_center_inner">
       <div class="container_center_item">
         <h2>Our customers are our biggest fans.</h2>
         <p>We dont' like to brag, but we don't mind letting our customers do it for us. Here are a few nice things folks have said about our themes over the years.</p>
-    </div>
-
-
-</div>
-<div class="container_center_card">
-
-  <div class="container_center_card_inner">
-    <div class="cont_it">
-      <div class="container_center_card_item">
-        <img src="img/landkit.jpg" style="  box-shadow: 0 17px 45px 0 #ECECEC;">
       </div>
-      <div class="container_center_card_item" style="margin-top: 30px">
+  </div>
+  <div class="container_center_card">
 
-        <div class="image" style="color: #FF5A5F;">
-          <img src="img/airbnbi.svg" >
+    <div class="container_center_card_inner">
+
+      <div class="cont_it">
+        <div class="container_center_card_item">
+          <img src="img/landkit.jpg" style="  box-shadow: 0 17px 45px 0 #ECECEC;">
+          
         </div>
-          <div class="container_center_card_item">
-            <h6>
-               “Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.”</h6>
-             </div>
-             <div class="container_center_card_item">
-                <p class="text" style="color: #869ab8; padding-bottom: 55px;">Dave Gamache</p>
-            </div>
-         
-              <div class="slideshow1" ><i class="fal fa-arrow-left" ></i></div>
-              <div class="slideshow2" ><i class="fal fa-arrow-right"></i></div>
-             
+        <div class="container_center_card_item" style="margin-top: 30px">
+
+          <div class="image" style="color: #FF5A5F;">
+            <img src="img/airbnbi.svg" >
+          </div>
+            <div class="container_center_card_item">
+              <h6>
+                 “Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.”</h6>
+               </div>
+               <div class="container_center_card_item">
+                  <p class="text" style="color: #869ab8; padding-bottom: 55px;">Dave Gamache</p>
+              </div>
+                <div class="slideshow1" ><i class="fal fa-arrow-left" onclick="plusSlides"></i></div>
+                <div class="slideshow2" ><i class="fal fa-arrow-right"></i></div>
         </div>
       </div>
-    
+      <div class="cont_it" style="display: none;">
+        <div class="container_center_card_item">
+          <img src="img/photo-26.jpg" style="  box-shadow: 0 17px 45px 0 #ECECEC;">
+          
+        </div>
+        <div class="container_center_card_item" style="margin-top: 30px">
 
- </div>
- 
+          <div class="image" style="color:#3F5D87;">
+            <img src="img/instagram1.svg" >
+          </div>
+            <div class="container_center_card_item">
+              <h6>
+                 
+                “I've never used a theme as versatile and flexible as Landkit. It's my go to for building landing sites on almost any project.”
+              </h6>
+               </div>
+               <div class="container_center_card_item">
+                  <p class="text" style="color: #869ab8; padding-bottom: 55px;">Russ D'Sa</p>
+              </div>
+                <div class="slideshow1" ><i class="fal fa-arrow-left" ></i></div>
+                <div class="slideshow2" ><i class="fal fa-arrow-right"></i></div>
+        </div>
+        </div>
+        <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>--> 
+
+  </div>
+     
 </div>
 </div>
-
-
 
 <div id="stats">
   <div class="stats_inner">
@@ -422,9 +617,8 @@
       </div>
       <div class="stats_item_inner_content " >
           <div class="stats_item_inner_content_col">
-            <div class="stats_item_inner_content_col1" >
-
-
+            <div class="stats_item_inner_content_col1" 
+             style="padding-right: 24px; border-right: 1px solid #d9e2ef;" >
               <h3 class="title">
                 <span style="color: black;" 
                   data-toggle="countup"
@@ -436,12 +630,11 @@
                   >100</span
                 >%
               </h3>
-              
             <p>Satisfaction</p>
            </div>
-          <div class="border-left border-gray-300"></div>
-
-        <div class="stats_item_inner_content_col1" >
+         
+        <div class="stats_item_inner_content_col1"
+        style="padding: 0 24px; border-right: 1px solid #d9e2ef;" >
            <h3 class="title">
                 <span style="color: black;" 
                   data-toggle="countup"
@@ -464,9 +657,9 @@
               </h3>
           <p>Support</p>
        </div>
-        <div class="border-left border-gray-300" ></div>
-
-        <div class="stats_item_inner_content_col1">
+     
+        <div class="stats_item_inner_content_col1"
+        style="padding-left: 24px;">
          <h3 class="title">
                 <span style="color: black;" 
                   data-toggle="countup"
@@ -479,24 +672,17 @@
                 >k+
               </h3>
         <p> Sales</p>
+        </div> 
         </div>
-     
+      </div>
+      </div>
+    </div>
+    <div class="stats_item2">
+      <img src="img/illustration-8.png" >
+    </div>
   </div>
-  </div>
-</div>
-</div>
-<div class="stats_item2">
-
-  <img src="img/illustration-8.png" >
-
-</div>
-
-</div>
-
-
 </div>
 <div class="fair">
-
    <div class="fair_inner">
       <h2 class="l-title">Fair, simple pricing for all.</h2>
       <p >
@@ -528,9 +714,7 @@
           </div>
           <p>per seat</p>
       </div>
-
-
-      <ul class="ula"    style="padding-top: 40px;">
+      <ul style="padding-top: 40px;">
         <li>
           <span><img src="img/18.PNG"></span>Rich, responsive
           landing pages
@@ -547,34 +731,29 @@
           <span><img src="img/18.PNG"></span>Speedy build tooling
       </li>
       <li style="margin-bottom: 0;">
-          <span><img src="img/18.PNG"></span>6 months free support
-          included
+          <span><img src="img/18.PNG"></span>6 months free support included
       </li>
   </ul>
 
-</div>
-<a href="#" class="but" style="border-radius: 0 0 6px 6px;text-decoration: none; ">Get it now</a>
-</div>
-<div class="cont" style="margin-top: 30px;">
-    <div class="cont_item" style="padding: 62px 60px; text-align: center;">
-      <span class="type type-2" style="margin-bottom: 96px;"
-      >Enterprise </span> 
-
-      <p class="para" >
-        We offer variable pricing with discounts for larger
-        organizations. Get in touch with us and we’ll figure out
-        something that works for everyone.
-    </p>
-</div>
-<a href="#" class="contact" style="border-radius: 0 0 6px 6px;text-decoration: none;"
->Contact us</a
->
-</div>
+  </div>
+    <a href="#" class="but" style="border-radius: 0 0 6px 6px;text-decoration: none; ">
+      Get it now</a>
+    </div>
+    <div class="cont" style="margin-top: 30px;">
+        <div class="cont_item" style="padding: 14% 12%; text-align: center;">
+          <span class="type type-2" style="margin-bottom: 96px;"
+          >Enterprise </span> 
+          <p class="para" >
+            We offer variable pricing with discounts for larger organizations. Get in touch with us and we’ll figure out
+            something that works for everyone.
+        </p>
+    </div>
+          <a href="#" class="contact" style="border-radius: 0 0 6px 6px;text-decoration: none;"
+          >Contact us</a
+    >
+    </div>
 </div>
 </div>  
-
-
-
 </div>
 
 <div class="question">
@@ -589,54 +768,51 @@
           </div>
 
       </div>
+        <div class="qs_content">
+          <div class="icon">?</div>
+          <div class="cont_item">
+            <h6 class="qs_cont" >Do I get free updates?</h6>
+            <p class="qs_text">Yes. We update all of our themes with each Bootstrap update, plus are constantly adding new components, pages, and features to our themes.</p>
+        </div>
+        </div>
+      </div>
+      <div class="question_item_content">
+          <div class="qs_content">
+            <div class="icon">?</div>
+            <div class="cont_item">
+              <h6 class="qs_cont">Is there a money back guarantee?</h6>
+              <p class="qs_text">Yup! Bootstrap Themes come with a satisfaction guarantee. Submit a return and get your money back.</p>
+          </div>
+      </div>
       <div class="qs_content">
         <div class="icon">?</div>
         <div class="cont_item">
-           <h6 class="qs_cont" >Do I get free updates?</h6>
-           <p class="qs_text">Yes. We update all of our themes with each Bootstrap update, plus are constantly adding new components, pages, and features to our themes.</p>
-       </div>
-   </div>
-</div>
-<div class="question_item_content">
-    <div class="qs_content">
-       <div class="icon">?</div>
-       <div class="cont_item">
-         <h6 class="qs_cont">Is there a money back guarantee?</h6>
-         <p class="qs_text">Yup! Bootstrap Themes come with a satisfaction guarantee. Submit a return and get your money back.</p>
-     </div>
- </div>
- <div class="qs_content">
-   <div class="icon">?</div>
-   <div class="cont_item">
-      <h6 class="qs_cont">Does it work with Rails? React? Laravel?</h6>
-      <p class="qs_text">Yes. Landkit has basic CSS/JS files you can include. If you want to enable deeper customization, you can integrate it into your assets pipeline or build processes.</p>
+            <h6 class="qs_cont">Does it work with Rails? React? Laravel?</h6>
+            <p class="qs_text">Yes. Landkit has basic CSS/JS files you can include. If you want to enable deeper customization, you can integrate it into your assets pipeline or build processes.</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
-<div class="question_item2">
-  <div class="bottom">
-    <span>Get started</span>
-    <h1 class="xl-title">Get Landkit and save your time.</h1>
-    <p class="s-para-text" style="text-align: center;">
-      Stop wasting time trying to do it the "right way" and build a site
-      from scratch.Landkit is faster, easier, and you still have complete
-      control.
-  </p>
-  <a href="#"
-  >Buy it now
-  <i
-  class="fal fa-arrow-right"
-  style="margin-left: 6px; font-size: 13px; font-weight: 300;"
-  ></i
-  ></a>
-</div>
-</div>
+      <div class="question_item2">
+        <div class="bottom">
+          <span>Get started</span>
+          <h1 class="xl-title">Get Landkit and save your time.</h1>
+          <p class="s-para-text" style="text-align: center;">
+            Stop wasting time trying to do it the "right way" and build a site
+            from scratch.Landkit is faster, easier, and you still have complete
+            control.
+        </p>
+        <a href="#">Buy it now
+        <i class="fal fa-arrow-right"
+        style="margin-left: 6px; font-size: 13px; font-weight: 300;"></i
+        ></a>
+        </div>
+      </div>
 
 </div>
 </div>
 <div class="footer-wrapper">
-  <div class="footer container">
+  <div class="footer container" style="padding: 0 15px;">
         <div class="footer-social" >
               <img class="logo" src="img/logo.svg">
               <p>A better way to build.</p>
@@ -688,6 +864,4 @@
     </div>
     </div>
 </div>
-
-
 </body>
