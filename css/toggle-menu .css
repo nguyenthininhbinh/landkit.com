@@ -46,11 +46,11 @@
   flex-basis: 50%;
 }
 
-.toggle-menu .navbar > li {
+.toggle-menu .navbar>li {
   padding: 1.5rem;
 }
 
-.toggle-menu .navbar > li > a {
+.toggle-menu .navbar>li>a {
   display: inline-block;
   color: #506690;
   font-size: 1.0625rem;
@@ -95,8 +95,8 @@
   flex-basis: 50%;
   color: #506690;
 }
-.toggle-menu .item-3 .menu-dropdown  a:hover{
- 
+
+.toggle-menu .item-3 .menu-dropdown a:hover {
   color: #506690;
 }
 
@@ -180,6 +180,7 @@
   background-color: #1643d4;
   transform: translateY(-3px);
 }
-.toggle-menu .item-3 .menu-dropdown a:hover{
-  color:  #1643d4;
+
+.toggle-menu .item-3 .menu-dropdown a:hover {
+  color: #1643d4;
 }

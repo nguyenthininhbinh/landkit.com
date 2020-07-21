@@ -7,15 +7,16 @@
   <link rel="stylesheet" type="text/css" href="css/reponsive.css">
   <link rel="stylesheet" type="text/css" href="css/toggle-menu .css">
   <link rel="stylesheet" type="text/css" href="css/slideshow.css">
-  <script language="javascript" src="js/js.js"></script>
+  <!-- <script language="javascript" src="js/js.js"></script> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
   <link rel="stylesheet"href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
- 
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body id="over" class="over">
 	<div id="header">
@@ -179,9 +180,10 @@
 </ul>
 
     </div>
-       <li class="btn-buy" onclick="showToggleMenu()">
+       <li class="btn-buy" >
         <a href="#">Buy now</a>
-            <i class="fal fa-bars" style="color: #161c2d; font-size: 26px; padding: 4px 12px;"
+            <i id="fb" class="fal fa-bars" style="color: #161c2d; font-size: 26px; padding: 4px 12px;"
+           
             ></i>
       </li>
 
@@ -191,14 +193,14 @@
     <div class="wrapper-toggle-menu">
       <div class="toggle-menu" id="toggle-menu">
         <ul class="navbar">
-          <i class="fal fa-times" onclick="hiddenToggleMenu()"></i>
+          <i class="fal fa-times" ></i>
           <li style="border-bottom: 1px solid #f1f4f8;">
             <a href="#">Landings</a>
             <div class="item item-1">
               <div class="left">
                 <ul style="margin-bottom: 1.5rem;">
                   <li class="name">Services</li>
-                  <li><a href="#">Coworking</a></li>
+                  <li><a hres="#">Coworking</a></li>
                   <li><a href="#">Rental</a></li>
                   <li><a href="#">Job Listing</a></li>
                 </ul>
@@ -280,7 +282,7 @@
                 id="menu-dropdown" 
               >
                 <a class="link-text">Settings <span>(New)</span></a>
-                <i class="fal fa-angle-down show"  onclick="dropdown(1)"></i>
+                <i class="fal fa-angle-down show"></i>
                 <ul class="list-text toggle-list-text" id='list_1'>
                   <li><a href="#">General</a></li>
                   <li><a href="#">Security</a></li>
@@ -291,7 +293,7 @@
               </div>
               <div class="content toggle-menu-dropdown menu-dropdown">
                 <a class="link-text">Sign In</a>
-                <i class="fal fa-angle-down show" onclick="dropdown(2)"></i>
+                <i class="fal fa-angle-down show"></i>
                 <ul class="list-text toggle-list-text" id='list_2'>
                   <li><a href="#">Side Cover</a></li>
                   <li><a href="#">Illustration</a></li>
@@ -302,7 +304,7 @@
               </div>
               <div class="content toggle-menu-dropdown menu-dropdown">
                 <a class="link-text">Sign Up</a>
-                <i class="fal fa-angle-down show"  onclick="dropdown(3)"></i>
+                <i class="fal fa-angle-down show"  ></i>
                 <ul class="list-text toggle-list-text" id='list_3'>
                   <li><a href="#">Side Cover</a></li>
                   <li><a href="#">Illustration</a></li>
@@ -313,7 +315,7 @@
               </div>
               <div class="content toggle-menu-dropdown menu-dropdown">
                 <a class="link-text">Password Reset</a>
-                <i class="fal fa-angle-down show"  onclick="dropdown(4)"></i>
+                <i class="fal fa-angle-down show"></i>
                 <ul class="list-text toggle-list-text" id='list_4'>
                   <li><a href="#">Side Cover</a></li>
                   <li><a href="#">Illustration</a></li>
@@ -322,7 +324,7 @@
               </div>
               <div class="content toggle-menu-dropdown menu-dropdown">
                 <a class="link-text">Error</a>
-                <i class="fal fa-angle-down show"  onclick="dropdown(5)"></i>
+                <i class="fal fa-angle-down show" ></i>
                 <ul class="list-text toggle-list-text" id='list_5'>
                   <li><a href="#">Side Cover</a></li>
                   <li><a href="#">Illustration</a></li>
@@ -470,18 +472,21 @@
         <img src="img/photo-2.jpg">
       </div>
     <div class="card_shadow_form">
-        <form name="myForm" method="POST" action="" onsubmit="return validateform">
+        <form name="myForm" action="#" id="validate_form" onsubmit="validateform(event)">
             <div class="form_lable_group">
-              <input type="text" class="form_control " id="card_name" placeholder="Name" style="border: none;border-bottom: 1px solid #f1f4f8;">
+              <input name ="name" type="text" class="form_control "  placeholder="Name" style="border: none;border-bottom: 1px solid #f1f4f8;" >
+              <p id="card_name" style="color: red;"></p>
             </div>
+            <div class="form_lable_group" >
+              <input name="email" type="email" class="form_control "  placeholder="Email" style="border: none;border-bottom: 1px solid #f1f4f8;" >
+              <p id="card_email" style="color: red;"></p>
+            </div>               
             <div class="form_lable_group">
-              <input type="email" class="form_control " id="card_email" placeholder="Email" style="border: none;border-bottom: 1px solid #f1f4f8;">
-            </div>
-            <div class="form_lable_group">
-              <input type="password" class="form_control " id="card_papssword" placeholder="Password" style="border: none;border-bottom: 1px solid #f1f4f8;">
+              <input name="password" type="password" class="form_control "  placeholder="Password" style="border: none;border-bottom: 1px solid #f1f4f8;">
+              <p id="card_password" style="color: red;"></p>
             </div>
             <div class="btn_form" style=" margin-top: 2rem;">
-              <button class="btn_form_submit" >
+              <button class="btn_form_submit">
                     Download a sample
               </button>
             </div>
@@ -548,57 +553,119 @@
         <p>We dont' like to brag, but we don't mind letting our customers do it for us. Here are a few nice things folks have said about our themes over the years.</p>
       </div>
   </div>
+
   <div class="container_center_card">
-
     <div class="container_center_card_inner">
-
-      <div class="cont_it">
-        <div class="container_center_card_item">
-          <img src="img/landkit.jpg" style="  box-shadow: 0 17px 45px 0 #ECECEC;">
-          
-        </div>
-        <div class="container_center_card_item" style="margin-top: 30px">
-
-          <div class="image" style="color: #FF5A5F;">
-            <img src="img/airbnbi.svg" >
-          </div>
-            <div class="container_center_card_item">
-              <h6>
-                 “Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.”</h6>
-               </div>
-               <div class="container_center_card_item">
-                  <p class="text" style="color: #869ab8; padding-bottom: 55px;">Dave Gamache</p>
+        <div class="slide">
+          <a class="slick-arrow slick-prev" >
+            <i class="fal fa-arrow-left"></i>
+          </a>
+          <div class="slick-list">
+            <div class="wrapper wrapperCustomer">
+              <div class="content contentCustomer fade" id="lastClone">
+                <div class="wrap" style="display: flex;">
+                  <div class="image" style="position: relative;width: 100%;">
+                    <!-- <a
+                      href="#"
+                     
+                    > </a> -->
+                    <img src="img/photo-26.jpg" style="width: 100%;" >
+                    
+                  </div>
+                  <div class="text">
+                    <div class="icon">
+                      <img src="img/instagram1.svg" alt="" />
+                    </div>
+                    <p>
+                      “I've never used a theme as versatile and flexible as
+                      Landkit. It's my go to for building landing sites on
+                      almost any project.”
+                    </p>
+                    <p class="author">RUSS D'SA</p>
+                  </div>
+                </div>
+                
               </div>
-                <div class="slideshow1" ><i class="fal fa-arrow-left" onclick="plusSlides"></i></div>
-                <div class="slideshow2" ><i class="fal fa-arrow-right"></i></div>
-        </div>
+
+              <div class="content contentCustomer fade">
+                <div class="wrap" style="display: flex;">
+                  <div class="image" style="position: relative;width: 100%;">
+                    <a href="#"></a>
+                    <img src="img/landkit.jpg" style="width: 100%;">
+                  </div>
+                  <div class="text">
+                    <div class="icon">
+                      <img src="img/airbnbi.svg" alt="" />
+                    </div>
+                    <p>
+                      “Landkit is hands down the most useful front end Bootstrap
+                      theme I've ever used. I can't wait to use it again for my
+                      next project.”
+                    </p>
+                    <p class="author">DAVE GAMACHE</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content contentCustomer fade">
+                <div class="wrap" style="display: flex;">
+                  <div class="image" style="position: relative;width: 100%;">
+                    <!-- <a
+                      href="#"
+                      style="background-image: url(./img/photo-26.jpg);"
+                    ></a> -->
+                    <img src="img/photo-26.jpg" style="width: 100%;" >
+                    
+                  </div>
+                  <div class="text">
+                    <div class="icon">
+                      <img src="img/instagram1.svg" alt="" />
+                    </div>
+                    <p>
+                      “I've never used a theme as versatile and flexible as
+                      Landkit. It's my go to for building landing sites on
+                      almost any project.”
+                    </p>
+                    <p class="author">RUSS D'SA</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content contentCustomer fade" id="firstClone">
+                <div class="wrap" style="display: flex;">
+                  <div class="image" style="position: relative;width: 100%;">
+                    <a href="#"></a>
+                    <img src="img/landkit.jpg" style="width: 100%;">
+                  </div>
+                  <div class="text">
+                    <div class="icon">
+                      <img src="img/airbnbi.svg" alt="" />
+                    </div>
+                    <p>
+                      “Landkit is hands down the most useful front end Bootstrap
+                      theme I've ever used. I can't wait to use it again for my
+                      next project.”
+                    </p>
+                    <p class="author">DAVE GAMACHE</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <a class="slick-arrow slick-next" >
+            <i class="fal fa-arrow-right"></i>
+          </a>
+          <ul class="slick-dots">
+            <li class="slick-active">
+              <button >1</button>
+            </li>
+            <li class="">
+              <button >2</button>
+            </li>
+          </ul>
       </div>
-      <div class="cont_it" style="display: none;">
-        <div class="container_center_card_item">
-          <img src="img/photo-26.jpg" style="  box-shadow: 0 17px 45px 0 #ECECEC;">
-          
-        </div>
-        <div class="container_center_card_item" style="margin-top: 30px">
-
-          <div class="image" style="color:#3F5D87;">
-            <img src="img/instagram1.svg" >
-          </div>
-            <div class="container_center_card_item">
-              <h6>
-                 
-                “I've never used a theme as versatile and flexible as Landkit. It's my go to for building landing sites on almost any project.”
-              </h6>
-               </div>
-               <div class="container_center_card_item">
-                  <p class="text" style="color: #869ab8; padding-bottom: 55px;">Russ D'Sa</p>
-              </div>
-                <div class="slideshow1" ><i class="fal fa-arrow-left" ></i></div>
-                <div class="slideshow2" ><i class="fal fa-arrow-right"></i></div>
-        </div>
-        </div>
-        <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>--> 
-
+      
   </div>
      
 </div>
@@ -864,4 +931,5 @@
     </div>
     </div>
 </div>
+<script language="javascript" src="js/jquery.js"></script>
 </body>
